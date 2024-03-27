@@ -1,8 +1,8 @@
 import AuthButton from "@/app/components/AuthButton";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
-import { CabinetEditForm } from "@/app/components/cabinet/edit";
-export default async function CabinetEditPage({ params}: { params : { id: string },}) {
+
+export default async function CabinetEdit({ params}: { params : { id: string },}) {
     const supabase = createClient();
     const { id } = params;
 
@@ -20,10 +20,11 @@ export default async function CabinetEditPage({ params}: { params : { id: string
         console.error(error);
     }
 
+  
 
     return(
         <>
-            <div className="w-full">
+    <div className="w-full">
         <div className="py-6 font-bold bg-purple-950 text-center">
           This is a protected page that you can only see as an authenticated
           user
@@ -34,10 +35,12 @@ export default async function CabinetEditPage({ params}: { params : { id: string
           </div>
         </nav>
       </div>
-      <CabinetEditForm cabinet={cabinet} id={id}/>
 
-      <div>
-      
+      <div >
+      <h1 className="text-3xl font-bold text-center mb-6">{cabinet?.name} Cabinet</h1>
+        <p className='text-3xl font-bold text-center mb-4'>
+          {cabinet?.description}
+        </p>
     </div>
         </>
     )
