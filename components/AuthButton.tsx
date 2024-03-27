@@ -25,6 +25,12 @@ export default async function AuthButton() {
           Logout
         </button>
       </form>
+      <Link href="/protected">
+            Home
+          </Link>
+          <Link href="/protected/cabinet">
+            Cabinet
+          </Link>
     </div>
   ) : (
     <Link

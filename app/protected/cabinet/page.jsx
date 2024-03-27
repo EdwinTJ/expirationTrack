@@ -1,7 +1,7 @@
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import AuthButton from "@/components/AuthButton";
-
+import Link from "next/link";
 export default async function CabinetHome() {
     const supabase = createClient();
 
@@ -22,7 +22,6 @@ export default async function CabinetHome() {
         console.error(error);
         return <div>Something went wrong</div>;
     }
-    console.log(cabinet);
     return (    
     <div className="flex-1 w-full flex flex-col gap-20 items-center">
             <div className="w-full">
@@ -38,6 +37,8 @@ export default async function CabinetHome() {
       </div>
     <div>Welcome to your cabinet, {user.email}!</div>
     <div>
+      {/* Table Of Cabinets */}
+      <Link href="/protected/cabinet/create" className="bg-blue-500 text-white px-2 py-1 rounded mb-4">Create Cabinet</Link>
     <table className="w-full border-collapse border border-gray-300">
     <thead className="bg-gray-200">
     <tr>
@@ -52,8 +53,8 @@ export default async function CabinetHome() {
                     <td className="border border-gray-300 px-4 py-2">{item.name}</td>
                     <td className="border border-gray-300 px-4 py-2">{item.description}</td>
                     <td className="border border-gray-300 px-4 py-2">
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</button>
-                        <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                        <Link href={`/protected/cabinet/edit/${item.id}`} className="bg-green-500 text-white px-2 py-1 rounded mr-2">Edit</Link>
+                        <Link href="/protected/cabinet/edit" className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</Link>
                     </td>
                 </tr>
             ))}
