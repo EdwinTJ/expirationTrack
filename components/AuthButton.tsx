@@ -31,6 +31,9 @@ export default async function AuthButton() {
           <Link href="/protected/cabinet">
             Cabinet
           </Link>
+          <Link href="/protected/items">
+            Items
+          </Link>
     </div>
   ) : (
     <Link

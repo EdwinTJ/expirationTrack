@@ -24,9 +24,9 @@ export default async function ProtectedPage() {
     return <div>Something went wrong while gettin cabinets</div>;
   }
   
-    const {data:item,error : err} = await supabase
-    .from('item')
-    .select('*');
+  const {data:item,error : err} = await supabase
+  .from('item')
+  .select('*');
   
     if(err){
       console.error(err);
