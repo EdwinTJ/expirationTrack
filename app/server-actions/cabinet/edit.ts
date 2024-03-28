@@ -1,6 +1,7 @@
 "use server";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache"
 
 export default async function CabinetEdit(formData : FormData) {
     const supabase = createClient();
@@ -18,7 +19,6 @@ export default async function CabinetEdit(formData : FormData) {
     const description = formData.get('description');
 
 
-    console.log("idi",id);
         const { data, error } = await supabase
         .from("cabinet")
         .update({name:name,description:description})
@@ -29,6 +29,5 @@ export default async function CabinetEdit(formData : FormData) {
             return ({message : "Something went wrong"});
         }
 
-    return {message : "Cabinet updated successfully",
-            redirect : "/protected/cabinet"};
+    return redirect('/protected/cabinet');
 }

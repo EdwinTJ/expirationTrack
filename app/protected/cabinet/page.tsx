@@ -53,8 +53,9 @@ export default async function CabinetHome() {
                     <td className="border border-gray-300 px-4 py-2">{item.name}</td>
                     <td className="border border-gray-300 px-4 py-2">{item.description}</td>
                     <td className="border border-gray-300 px-4 py-2">
-                        <Link href={`/protected/cabinet/edit/${item.id}`} className="bg-green-500 text-white px-2 py-1 rounded mr-2">Edit</Link>
-                        <Link href="/protected/cabinet/edit" className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</Link>
+                        <Link href={`/protected/cabinet/${item.id}`} className="bg-yellow-500 hover:bg-yellow-700 text-white px-2 py-1 rounded mr-2">View</Link>
+                        <Link href={`/protected/cabinet/edit/${item.id}`} className="bg-green-500 hover:bg-green-700 text-white px-2 py-1 rounded mr-2">Edit</Link>
+                        <Link href={`/protected/cabinet/delete/${item.id}`} className="bg-red-500 hover:bg-red-700 text-white px-2 py-1 rounded">Delete</Link>
                     </td>
                 </tr>
             ))}

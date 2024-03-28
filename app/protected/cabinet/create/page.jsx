@@ -8,7 +8,7 @@ export default async function CabinetHome() {
     const {
       data: { user },
     } = await supabase.auth.getUser();
-  
+
     if (!user) {
       return redirect("/login");
     }
@@ -30,7 +30,7 @@ export default async function CabinetHome() {
         return <div>Something went wrong</div>;
     }
 
-    return redirect("protected/cabinet");
+    return redirect("/protected/cabinet");
     };
 
     return(
