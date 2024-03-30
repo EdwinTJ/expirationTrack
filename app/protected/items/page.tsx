@@ -54,7 +54,8 @@ export default async function ItemHome() {
           </div>
           
         </nav>
-      </div>    <div>
+      </div>    
+      <div>
         <p>This page help ypu organize and view all your items</p>
         <div>
             <h3>Soon to be expired</h3>
@@ -86,9 +87,8 @@ export default async function ItemHome() {
                 </tbody>
               </table>
             </div>
+      </div>
     </div>
-    </div>
-
     </>);
 
 }
