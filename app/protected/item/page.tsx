@@ -77,8 +77,8 @@ export default async function ItemHome() {
                       <td className="border border-gray-300 px-4 py-2">{item.quantity}</td>
                       <td className="border border-gray-300 px-4 py-2">{getCabinetNameById(item.cabinet_id)}</td>
                       <td className="border border-gray-300 px-4 py-2">
-                        <button className="bg-yellow-500 hover:bg-yellow-700 text-white px-2 py-1 rounded mr-2">View</button>
-                        <button className="bg-green-500 hover:bg-green-700 text-white px-2 py-1 rounded mr-2">Edit</button>
+                        <Link href={`/protected/item/edit/${item.id}`} className="bg-yellow-500 hover:bg-yellow-700 text-white px-2 py-1 rounded mr-2">View</Link>
+                        <Link href={`/protected/item/edit/${item.id}`} className="bg-green-500 hover:bg-green-700 text-white px-2 py-1 rounded mr-2">Edit</Link>
                         <button className="bg-red-500 hover:bg-red-700 text-white px-2 py-1 rounded">Delete</button>
                       </td>
                     </tr>
