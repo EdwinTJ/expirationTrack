@@ -59,6 +59,7 @@ export default async function ItemHome() {
         <p>This page help ypu organize and view all your items</p>
         <div>
             <h3>Soon to be expired</h3>
+            <Link href="/protected/item/create" className="bg-blue-500 text-white px-2 py-1 rounded mb-4">Create Item</Link>
               <table className="w-full border-collapse border border-gray-300">
                 <thead className="bg-gray-200">
                   <tr>
