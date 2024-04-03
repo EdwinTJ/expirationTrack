@@ -39,7 +39,7 @@ export function ItemEditForm({item,cabinet}:{item: Item[],cabinet: Cabinet[]}) {
                                 type="date" 
                                 id="expiration_date"
                                 name="expiration_date" 
-                                value={formData.expiration_date} 
+                                value={formData.expiration_date.toISOString()} 
                                 onChange={handleChange} 
                             />
                         </div>
