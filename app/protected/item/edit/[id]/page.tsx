@@ -20,6 +20,16 @@ export default async function ItemEditPage({ params}) {
         console.error(error);
     }
 
+    const { data: cabinet, err } = await supabase
+    .from('cabinet')
+    .select('*');  
+    if (err) {
+        console.error(err);
+        return <div>Something went wrong while gettin cabinets</div>;
+    }
+
+
+    console.log(cabinet)
 
     return(
         <>
@@ -34,7 +44,7 @@ export default async function ItemEditPage({ params}) {
           </div>
         </nav>
       </div>
-      <ItemEditForm item={item}/>
+      <ItemEditForm item={item} cabinet={cabinet}/>
 
       <div>
       

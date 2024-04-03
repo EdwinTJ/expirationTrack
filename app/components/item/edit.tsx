@@ -3,7 +3,7 @@
 import { useState } from "react"
 import ItemEdit from "@/app/server-actions/item/edit"
 
-export function ItemEditForm({item}) {
+export function ItemEditForm({item,cabinet}) {
     const [formData, setFormData] = useState({
         id: item[0].id,
         name: item[0].name,
@@ -11,8 +11,6 @@ export function ItemEditForm({item}) {
         quantity: item[0].quantity,
     })
     const handleChange = (e) => setFormData({...formData, [e.target.name]: e.target.value})
-
-console.log("item : ",formData.name);
     return (
         <div>
                 <div className="flex justify-center px-4">
@@ -52,6 +50,17 @@ console.log("item : ",formData.name);
                                 value={formData.quantity} 
                                 onChange={handleChange} 
                             />
+                        </div>
+                        <div>
+                        <label htmlFor="cabinet">
+                        <select name="cabinet" id="cabinet">
+                        {cabinet.map((cabinet) => (
+                            <option key={cabinet.id} value={cabinet.id}>
+                            {cabinet.name}
+                            </option>
+                        ))}
+                        </select>
+                    </label> 
                         </div>
                         <button type="submit" className="ml-2 bg-blue-500 text-white px-2 py-1 rounded">
                             Edit

@@ -26,18 +26,19 @@ export default async function CabinetHome() {
     const name = formData.get("name") ;
     const expiration_date = formData.get("expiration_date") ;
     const quantity = formData.get("quantity") ;
+    const cabinet_id = formData.get("cabinet") ;
     const supabase = createClient();
 
     const { data, error } = await supabase
     .from("item")
-    .insert([{name, expiration_date, quantity}]);
+    .insert([{name, expiration_date, quantity, cabinet_id}]);
 
     if (error) {
         console.error(error);
         return <div>Something went wrong</div>;
     }
 
-    return redirect("/protected/cabinet");
+    return redirect("/protected/item");
     };
 
     return(
@@ -82,6 +83,15 @@ export default async function CabinetHome() {
           id="quantity"
           name="quantity" 
         />
+        <label htmlFor="cabinet">
+          <select name="cabinet" id="cabinet">
+            {cabinet.map((cabinet) => (
+              <option key={cabinet.id} value={cabinet.id}>
+                {cabinet.name}
+              </option>
+            ))}
+          </select>
+        </label>
         <SubmitButton
           formAction={create}
           className="border border-foreground/20 rounded-md px-4 py-2 text-foreground mb-2"

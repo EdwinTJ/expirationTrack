@@ -18,11 +18,12 @@ export default async function ItemEdit(formData : FormData) {
     const name = formData.get('name');
     const expiration_date = formData.get('expiration_date');
     const quantity = parseInt(formData.get('quantity') as string);
+    const cabinet_id = parseInt(formData.get('cabinet_id') as string);
 
 
         const { data, error } = await supabase
         .from("item")
-        .update({name:name,expiration_date:expiration_date,quantity:quantity})
+        .update({name:name,expiration_date:expiration_date,quantity:quantity,cabinet_id:cabinet_id})
         .eq("id", id);
     
         if (error) {
