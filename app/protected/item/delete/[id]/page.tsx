@@ -1,8 +1,7 @@
-import AuthButton from "@/components/AuthButton";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { ItemDeleteForm } from "@/app/components/item/delete";
-export default async function CabinetEditPage({ params}: { params : { id: string },}) {
+export default async function ItemDEletePage({ params}: { params : { id: string },}) {
     const supabase = createClient();
     const { id } = params;
 
