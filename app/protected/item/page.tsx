@@ -1,4 +1,3 @@
-import AuthButton from "@/components/AuthButton";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import Link from "next/link";
@@ -42,24 +41,12 @@ export default async function ItemHome() {
   
     return (
     <>
-    <div className="flex-1 w-full flex flex-col gap-20 items-center">
-    <div className="w-full">
-        <div className="py-6 font-bold bg-purple-950 text-center">
-          This is a protected page that you can only see as an authenticated
-          user
-        </div>
-        <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-          <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
-            <AuthButton />
-          </div>
-          
-        </nav>
-      </div>    
+    <div className="flex-1 w-full flex flex-col gap-20 items-center">   
       <div>
         <p>This page help ypu organize and view all your items</p>
         <div>
             <h3>Soon to be expired</h3>
-            <Link href="/protected/item/create" className="bg-blue-500 text-white px-2 py-1 rounded mb-4">Create Item</Link>
+            <Link href="/protected/item/create" className="bg-blue-500 text-white px-2 py-1 rounded mb-2">Create Item</Link>
               <table className="w-full border-collapse border border-gray-300">
                 <thead className="bg-gray-200">
                   <tr>
