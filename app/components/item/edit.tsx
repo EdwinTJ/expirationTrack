@@ -12,7 +12,7 @@ export function ItemEditForm({item,cabinet}:{item: Item[],cabinet: Cabinet[]}) {
         expiration_date: item[0].expiration_date,
         quantity: item[0].quantity,
     })
-    const handleChange = (e) => setFormData({...formData, [e.target.name]: e.target.value})
+    const handleChange = (e: { target: { name: any; value: any } }) => setFormData({...formData, [e.target.name]: e.target.value})
     return (
                     <div >
                     <form action={ItemEdit}>
