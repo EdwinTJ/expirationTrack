@@ -10,40 +10,39 @@ export function CabinetDeleteForm({cabinet,id}) {
 
 
     return (
-        <div>
-                <div className="flex justify-center px-4">
-                    <div >
-                    <form action={CabinetDelete}>
+        <div >
+            <form action={CabinetDelete}>
+            <input 
+            
+                    type="hidden" 
+                    name="id" 
+                    value={id} 
+                />
+                <div >
+                    <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">Name</label>
                     <input 
-                            type="hidden" 
-                            name="id" 
-                            value={id} 
-                        />
-                        <div >
-                            <label htmlFor="name" >Name</label>
-                            <input 
-                                type="text" 
-                                id="name"
-                                name="name" 
-                                value={formData.name} 
-                                readOnly
-                                                            />
-                        </div>
-                        <div>
-                            <label htmlFor="description">Desciption</label>
-                            <textarea 
-                                id="description"
-                                name="description" 
-                                value={formData.description} 
-                                readOnly       
-                                                     />
-                        </div>
-                        <button type="submit" className="ml-2 bg-blue-500 text-white px-2 py-1 rounded">
-                            Delete
-                        </button>
-                    </form>
-                    </div>
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        type="text" 
+                        id="name"
+                        name="name" 
+                        value={formData.name} 
+                        readOnly
+                                                    />
                 </div>
+                <div>
+                    <label htmlFor="description" className="block text-gray-700 text-sm font-bold mb-2">Desciption</label>
+                    <textarea 
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="description"
+                        name="description" 
+                        value={formData.description} 
+                        readOnly       
+                                                />
+                </div>
+                <button type="submit" className="ml-2 bg-blue-500 text-white px-2 py-1 rounded">
+                    Delete
+                </button>
+            </form>
         </div>
     )
 }
