@@ -1,6 +1,4 @@
-import AuthButton from "@/components/AuthButton";
 import { createClient } from "@/utils/supabase/server";
-import { get } from "http";
 import { redirect } from "next/navigation";
 async function getServerSideProps({ params }: { params: { id: string } }) {
   const supabase = createClient();
@@ -19,9 +17,8 @@ async function getServerSideProps({ params }: { params: { id: string } }) {
   };
 }
 
-export default async function CabinetEdit({ params }: { params: { id: string } }) {
+export default async function Cabinet({ params }: { params: { id: string } }) {
     const supabase = createClient();
-    // const { id } = params;
 
     const {
       data: { user },
@@ -31,7 +28,6 @@ export default async function CabinetEdit({ params }: { params: { id: string } }
       return redirect("/login");
     }
 
-    // const { data: cabinet, error } = await supabase.from("cabinet").select("*").eq("id", id);   
     const {cabinet} = await getServerSideProps({params});
     
   if(!cabinet) {

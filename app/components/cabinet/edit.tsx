@@ -9,7 +9,7 @@ export function CabinetEditForm({cabinet,id} : {cabinet: Cabinet[],id: string}) 
         name: cabinet[0].name,
         description: cabinet[0].description,
     })
-    const handleChange = (e: { target: { name: any; value: any } }) => setFormData({...formData, [e.target.name]: e.target.value})
+    const handleChange = (e: { target: { name: string; value: any } }) => setFormData({...formData, [e.target.name]: e.target.value})
 
 console.log("cabinet : ",formData.name);
     return (

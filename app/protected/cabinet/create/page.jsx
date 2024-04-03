@@ -2,7 +2,7 @@ import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import AuthButton from "@/components/AuthButton";
 import {SubmitButton} from "@/components/SubmitButton";
-export default async function CabinetHome() {
+export default async function CabinetCreate() {
     const supabase = createClient();
 
     const {
