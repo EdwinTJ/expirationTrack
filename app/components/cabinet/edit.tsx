@@ -2,8 +2,9 @@
 
 import { useState } from "react"
 import CabinetEdit from "@/app/server-actions/cabinet/edit"
+import {Cabinet} from "@/app/interfeces"
 
-export function CabinetEditForm({cabinet,id}) {
+export function CabinetEditForm({cabinet,id} : {cabinet: Cabinet[],id: string}) {
     const [formData, setFormData] = useState({
         name: cabinet[0].name,
         description: cabinet[0].description,

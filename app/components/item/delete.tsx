@@ -2,7 +2,9 @@
 
 import { useState } from "react"
 import {ItemDelete} from "@/app/server-actions/item/delete"
-export function ItemDeleteForm({item}) {
+import {Item} from "@/app/interfeces"
+
+export function ItemDeleteForm({item}:{item: Item[]}) {
     const [formData, setFormData] = useState({
         id: item[0].id,
         name: item[0].name,
