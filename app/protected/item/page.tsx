@@ -41,7 +41,6 @@ export default async function ItemHome() {
     return (
     <>
     <div className="flex-1 w-full flex flex-col gap-20 items-center">   
-      <div>
         <p>This page help ypu organize and view all your items</p>
         <div>
             <h3>Soon to be expired</h3>
@@ -75,7 +74,6 @@ export default async function ItemHome() {
               </table>
             </div>
       </div>
-    </div>
     </>);
 
 }
