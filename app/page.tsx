@@ -26,7 +26,14 @@ export default async function Index() {
       <footer className="w-full border-t border-t-foreground/10 p-8 flex justify-center text-center text-xs">
         <p>
           Powered by{" "}
+          <a
+            href={`${process.env.MY_WEBSITE}`}
+            target="_blank"
+            className="font-bold hover:underline"
+            rel="noreferrer"
+          >
           Edwin Silvestre
+          </a>
         </p>
       </footer>
     </div>
