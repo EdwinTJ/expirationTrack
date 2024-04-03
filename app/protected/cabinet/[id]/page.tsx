@@ -19,7 +19,7 @@ async function getServerSideProps({ params }: { params: { id: string } }) {
   };
 }
 
-export default async function CabinetEdit({ params}) {
+export default async function CabinetEdit({ params }: { params: { id: string } }) {
     const supabase = createClient();
     // const { id } = params;
 
@@ -71,7 +71,7 @@ export default async function CabinetEdit({ params}) {
                     </tr>
                   </thead>
                   <tbody>
-                    {item.map((item) => (
+                    {item && item.map((item) => (
                       <tr key={item.id}>
                         <td className="border border-gray-300 px-4 py-2">{item.name}</td>
                         <td className="border border-gray-300 px-4 py-2">{item.expiration_date}</td>
@@ -83,7 +83,6 @@ export default async function CabinetEdit({ params}) {
                           <button className="bg-red-500 hover:bg-red-700 text-white px-2 py-1 rounded">Delete</button>
                         </td>
                       </tr>
-                    
                     ))}
                   </tbody>
                 </table>

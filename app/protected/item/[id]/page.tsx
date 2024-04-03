@@ -1,6 +1,6 @@
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
-export default async function ItemEditPage({ params}) {
+export default async function ItemEditPage({ params}: { params : { id: string },}) {
     const supabase = createClient();
     const { id } = params;
 
