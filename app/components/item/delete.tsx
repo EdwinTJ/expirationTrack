@@ -39,7 +39,7 @@ export function ItemDeleteForm({item}:{item: Item[]}) {
                         type="date" 
                         id="expiration_date"
                         name="expiration_date" 
-                        value={formData.expiration_date} 
+                        value={formData.expiration_date.toISOString()} 
                         readOnly
                     />
                 </div>
