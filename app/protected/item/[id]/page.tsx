@@ -18,7 +18,7 @@ export default async function ItemEditPage({ params}: { params : { id: string },
         console.error(error);
     }
 
-    const { data: cabinet, err } = await supabase
+    const { data: cabinet, error : err } = await supabase
     .from('cabinet')
     .select('*');  
     if (err) {
