@@ -2,7 +2,8 @@
 
 import { useState } from "react"
 import {CabinetDelete} from "@/app/server-actions/cabinet/delete"
-export function CabinetDeleteForm({cabinet,id}) {
+import {Cabinet} from "@/app/interfeces"
+export function CabinetDeleteForm({cabinet,id}: {cabinet: Cabinet[],id: bigint}) {
     const [formData, setFormData] = useState({
         name: cabinet[0].name,
         description: cabinet[0].description,
