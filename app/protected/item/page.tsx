@@ -35,7 +35,6 @@ export default async function ItemHome() {
       
     const getCabinetNameById = (cabinetId: number) => {
         const cabinetById = cabinet.find((cabinet) => cabinet.id === cabinetId);
-        console.log("cabinetById", cabinetById);
         return cabinetById ? cabinetById.name : "";
     };
   

@@ -35,7 +35,6 @@ export default async function ProtectedPage() {
     
     const getCabinetNameById = (cabinetId: number) => {
       const cabinetById = cabinet.find((cabinet) => cabinet.id === cabinetId);
-      console.log("cabinetById", cabinetById);
       return cabinetById ? cabinetById.name : "";
     };
 
@@ -89,12 +88,11 @@ export default async function ProtectedPage() {
                       <td className="border border-gray-300 px-4 py-2">{item.quantity}</td>
                       <td className="border border-gray-300 px-4 py-2">{getCabinetNameById(item.cabinet_id)}</td>
                       <td className="border border-gray-300 px-4 py-2">
-                        <button className="bg-yellow-500 hover:bg-yellow-700 text-white px-2 py-1 rounded mr-2">View</button>
-                        <button className="bg-green-500 hover:bg-green-700 text-white px-2 py-1 rounded mr-2">Edit</button>
-                        <button className="bg-red-500 hover:bg-red-700 text-white px-2 py-1 rounded">Delete</button>
+                        <Link href={`/protected/item/${item.id}`} className="bg-yellow-500 hover:bg-yellow-700 text-white px-2 py-1 rounded mr-2">View</Link>
+                        <Link href={`/protected/item/edit/${item.id}`} className="bg-green-500 hover:bg-green-700 text-white px-2 py-1 rounded mr-2">Edit</Link>
+                        <Link href={`/protected/item/delete/${item.id}`} className="bg-red-500 hover:bg-red-700 text-white px-2 py-1 rounded">Delete</Link>
                       </td>
-                    </tr>
-                  
+                    </tr>                  
                   ))}
                 </tbody>
               </table>
