@@ -46,14 +46,13 @@ export default async function ItemEditPage({ params}: { params : { id: string },
                     </tr>
                   </thead>
                   <tbody>
-                    {item.map((item) => (
+                    {item && item.map((item) => (
                       <tr key={item.id}>
                         <td className="border border-gray-300 px-4 py-2">{item.name}</td>
                         <td className="border border-gray-300 px-4 py-2">{item.expiration_date}</td>
                         <td className="border border-gray-300 px-4 py-2">{item.quantity}</td>
                         <td className="border border-gray-300 px-4 py-2">{getCabinetNameById(item.cabinet_id)}</td>
                       </tr>
-                    
                     ))}
                   </tbody>
                 </table>

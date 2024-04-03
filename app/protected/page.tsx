@@ -53,7 +53,7 @@ export default async function ProtectedPage() {
             </tr>
         </thead>
         <tbody>
-            {cabinet.map((item) => (
+            {cabinet && cabinet.map((item) => (
                 <tr key={item.id}>
                     <td className="border border-gray-300 px-4 py-2">{item.name}</td>
                     <td className="border border-gray-300 px-4 py-2">{item.description}</td>
@@ -81,7 +81,7 @@ export default async function ProtectedPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {item.map((item) => (
+                  {item && item.map((item) => (
                     <tr key={item.id}>
                       <td className="border border-gray-300 px-4 py-2">{item.name}</td>
                       <td className="border border-gray-300 px-4 py-2">{item.expiration_date}</td>

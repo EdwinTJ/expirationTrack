@@ -37,7 +37,7 @@ export default async function CabinetHome() {
               </tr>
           </thead>
           <tbody>
-              {cabinet.map((item) => (
+              {cabinet &&cabinet.map((item) => (
                   <tr key={item.id}>
                       <td className="border border-gray-300 px-4 py-2">{item.name}</td>
                       <td className="border border-gray-300 px-4 py-2">{item.description}</td>
